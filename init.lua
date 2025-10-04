@@ -26,4 +26,5 @@ require("lazy").setup({
 	require("plagins.indent-blankline"),
 	require("plagins.misc"),
 	require("plagins.toggleterm"),
+	require("plagins.nvim-dap"),
 })
