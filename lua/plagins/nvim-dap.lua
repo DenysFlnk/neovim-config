@@ -81,6 +81,26 @@ return {
 			vim.keymap.set("n", "<leader>du", function()
 				dapui.toggle()
 			end, opts)
+
+			-- Debug the current test class
+			vim.keymap.set("n", "<leader>dtc", function()
+				require("dap-python").test_class()
+			end, opts)
+
+			-- Debug the current test method
+			vim.keymap.set("n", "<leader>dtm", function()
+				require("dap-python").test_method()
+			end, opts)
+
+			-- Attach to FastAPI dev
+			vim.keymap.set("n", "<leader>da", function()
+				dap.run({
+					type = "python",
+					request = "attach",
+					name = "Attach to fastapi dev",
+					connect = { host = "127.0.0.1", port = 5678 },
+				})
+			end, { noremap = true, silent = true, desc = "Attach to FastAPI dev" })
 		end,
 	},
 }
