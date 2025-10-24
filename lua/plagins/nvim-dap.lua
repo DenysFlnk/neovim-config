@@ -50,47 +50,47 @@ return {
 			-- Toggle breakpoint
 			vim.keymap.set("n", "<leader>db", function()
 				dap.toggle_breakpoint()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Toggle breakpoint" })
 
 			-- Continue / Start
 			vim.keymap.set("n", "<leader>dc", function()
 				dap.continue()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Continue / Start" })
 
 			-- Step Over
 			vim.keymap.set("n", "<leader>do", function()
 				dap.step_over()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Step Over" })
 
 			-- Step Into
 			vim.keymap.set("n", "<leader>di", function()
 				dap.step_into()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Step Into" })
 
 			-- Step Out
 			vim.keymap.set("n", "<leader>dO", function()
 				dap.step_out()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Step Out" })
 
 			-- Keymap to terminate debugging
 			vim.keymap.set("n", "<leader>dq", function()
 				require("dap").terminate()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Keymap to terminate debugging" })
 
 			-- Toggle DAP UI
 			vim.keymap.set("n", "<leader>du", function()
 				dapui.toggle()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Toggle DAP UI" })
 
 			-- Debug the current test class
 			vim.keymap.set("n", "<leader>dtc", function()
 				require("dap-python").test_class()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Debug the current test class" })
 
 			-- Debug the current test method
 			vim.keymap.set("n", "<leader>dtm", function()
 				require("dap-python").test_method()
-			end, opts)
+			end, { noremap = true, silent = true, desc = "Debug the current test method" })
 
 			-- Attach to FastAPI dev
 			vim.keymap.set("n", "<leader>da", function()
