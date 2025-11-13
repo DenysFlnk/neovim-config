@@ -97,10 +97,10 @@ return {
 				dap.run({
 					type = "python",
 					request = "attach",
-					name = "Attach to fastapi dev",
+					name = "Attach to debug session",
 					connect = { host = "127.0.0.1", port = 5678 },
 				})
-			end, { noremap = true, silent = true, desc = "Attach to FastAPI dev" })
+			end, { noremap = true, silent = true, desc = "Attach to debug session" })
 		end,
 	},
 }
