@@ -131,18 +131,28 @@ return {
 		-- - settings (table): Override the default settings passed when initializing the server.
 		local servers = {
 			ts_ls = {},
-			ruff = {},
+			ruff = {
+				on_attach = function(client)
+					client.server_capabilities.documentFormattingProvider = true
+					client.server_capabilities.documentRangeFormattingProvider = true
+				end,
+			},
 			basedpyright = {
 				settings = {
 					basedpyright = {
 						analysis = {
 							autoSearchPaths = true,
-							diagnosticMode = "workspace",
+							diagnosticMode = "openFilesOnly",
 							useLibraryCodeForTypes = true,
 							typeCheckingMode = "basic", -- or "strict"
 						},
 					},
 				},
+				on_attach = function(client)
+					client.server_capabilities.publishDiagnostics = false
+					client.server_capabilities.documentFormattingProvider = false
+					client.server_capabilities.documentRangeFormattingProvider = false
+				end,
 			},
 			--			pylsp = {
 			--				settings = {
