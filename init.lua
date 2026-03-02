@@ -29,4 +29,5 @@ require("lazy").setup({
 	require("plugins.nvim-dap"),
 	require("plugins.comment"),
 	require("plugins.markview"),
+	require("plugins.conform")
 })
